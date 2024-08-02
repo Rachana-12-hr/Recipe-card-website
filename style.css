@@ -1,0 +1,77 @@
+:root {
+    --main-bg-color: black;
+    --main-text-color: white;
+    --hover-text-color: cyan;
+}
+
+body {
+    background-image: url("images/recipebg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    height: 100vh; /* Make sure the body fills the viewport */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    text-align: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.7); /* Optional: semi-transparent background for better readability */
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation-name: newexample1;
+    animation-duration: 5s;
+}
+
+@keyframes newexample1{
+    0%{background-color: aqua;}
+    25%{background-color: yellow;}
+    50%{background-color: yellowgreen;}
+    100%{background-color: red;}
+}
+.container:hover{
+
+
+    border-radius:50px;
+
+}
+
+.head{
+    background-color: var(--main-bg-color);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    transition: color 0.3s, border 0.3s;
+    text-shadow: 10px;
+}
+.head1{
+    background-color: red;
+    color: red;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    transition: color 0.3s, border 0.3s;
+}
+
+.head:hover{
+    border: 1px solid black;
+    color: blue;
+}
+
+.mid h1 {
+
+    animation: moveRight 5s forwards;
+}
+
+@keyframes moveRight {
+    from {
+        transform: translateX(-100vw);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

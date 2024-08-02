@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            padding: 0%;
+            margin: auto;
+        }
+        .cont {
+            background-color: black;
+            color: white;
+            padding: 30px;
+            margin: 0px;
+            text-align: center;
+        }
+        .center {
+            background-color: whitesmoke;
+            text-align: center;
+            margin: 50px 350px;
+            border-radius: 50px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 50px;
+            text-decoration: none;
+            margin: 5px 2px;
+        }
+        .fa:hover {
+            opacity: 0.7;
+        }
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+        .fa-linkedin {
+            background: #007bb5;
+            color: white;
+        }
+        .fa-instagram {
+            background: #125688;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header class="cont">
+        Give Feedback About Our Recipe Website
+    </header>
+    <div class="center">
+        <form id="feedback-form">
+            <h6>FEEDBACK</h6>
+            <textarea id="feedback" placeholder="Enter your feedback here..." required></textarea>
+            <h6>Any Suggestions</h6>
+            <textarea id="suggestions" placeholder="Enter your suggestions here..." required></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <footer class="cont">
+        &copy; All rights reserved<br>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="https://www.linkedin.com/in/rachana-h-r-2b210724b" class="fa fa-linkedin"></a>
+        <a href="https://www.instagram.com/rachana_vini26" class="fa fa-instagram"></a><br>
+        <a href="index.html">Click here to navigate to the main page</a>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+    <script type="text/javascript">
+      // Initialize EmailJS
+      (function() {
+          emailjs.init("Zl-MOOad0DBSPhc_4"); // Replace with your EmailJS User ID
+      })();
+
+      document.getElementById("feedback-form").addEventListener("submit", function(event) {
+          event.preventDefault();
+
+          // Collect form data
+          const feedback = document.getElementById("feedback").value;
+          const suggestions = document.getElementById("suggestions").value;
+
+          // Send form data using EmailJS
+          emailjs.send("service_vx0qlbv", "template_gfd3ptg", {
+              feedback: feedback,
+              suggestions: suggestions
+          }).then(function(response) {
+              alert("Feedback sent successfully!");
+              // Clear the form after successful submission
+              document.getElementById("feedback-form").reset();
+          }, function(error) {
+              console.error("Failed to send feedback:", error);
+              alert("Failed to send feedback. Please try again.");
+          });
+      });
+    </script>
+</body>
+</html>

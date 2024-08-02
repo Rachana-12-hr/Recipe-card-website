@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Recipe Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex; /* Ensures the flex properties are used */
+            flex-wrap: wrap; /* Allows items to wrap to the next line */
+            justify-content: center; /* Centers items horizontally */
+            padding: 20px;
+            gap: 20px;
+            background-color: aquamarine;
+        }
+
+        .container a {
+            display: inline-block; /* Make links block-level to contain images */
+            width: 300px; /* Set a consistent width */
+            height: 200px; /* Set a consistent height */
+            overflow: hidden; /* Hide overflow */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            text-decoration: none; /* Remove underline from link text */
+            color: black; /* Set default link text color */
+            text-align: center; /* Center text within links */
+        }
+
+        .container a:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        .container img {
+            width: 100%; /* Fill the container width */
+            height: 100%; /* Fill the container height */
+            object-fit: contain; /* Maintain aspect ratio and fit within container */
+            display: block; /* Prevents image bottom margin issue */
+            object-position: center; /* Center images within their container */
+        }
+        .container img:hover{
+            border:5px dotted black;
+        }
+
+        .front {
+            background-color: aqua;
+            text-align: center;
+            border-radius: 30px;
+            border: 3px solid black;
+            padding: 10px;
+        }
+
+        .front h1 {
+            animation-name: example1;
+            animation-duration: 10s;
+            margin: 0;
+        }
+
+        @keyframes example1 {
+            0% {color: red;}
+            25% {color: aquamarine;}
+            50% {color: red;}
+            100% {color: aquamarine;}
+        }
+
+        .main {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .main a {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none; /* Remove underline */
+            transition: background-color 0.3s;
+        }
+
+        .main a:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="front">
+        <h1>PIZZA RECIPES</h1>
+    </div>
+    <div class="container">
+        <a href="https://thecozycook.com/pizza-hut-pizza/">
+            <img src="images/PIZZA1.png" alt="Pizza 1" title="click me to know the detailed recipe">
+            click me
+        </a>
+        <a href="https://detoxinista.com/the-secret-to-perfect-cauliflower-pizza-crust/">
+            <img src="images/PIZZA2.jpg" alt="Pizza 2" title="click me to know the detailed recipe">
+            click me
+        </a>
+        <a href="https://www.vegrecipesofindia.com/veg-pizza-recipe-vegetable-pizza/">
+            <img src="images/PIZZA3.png" alt="Pizza 3" title="click me to know the detailed recipe">
+            click me
+        </a>
+        <a href="https://www.thecookierookie.com/easy-smores-dessert-pizza/">
+            <img src="images/PIZZA4.jpg" alt="Pizza 4" title="click me to know the detailed recipe">
+            click me
+        </a>
+        <a href="https://www.indianhealthyrecipes.com/pizza-recipe-make-pizza/">
+            <img src="images/PIZZA5.png" alt="Pizza 5" title="click me to know the detailed recipe">
+            click me
+        </a>
+        <a href="https://hebbarskitchen.com/mini-pizzas-recipe-pizza-bites-recipe/">
+            <img src="images/PIZZA6.jpg" alt="Pizza 6" title="click me to know the detailed recipe">
+            click me
+        </a>
+    </div>
+    <div class="main">
+        <a href="index.html">CLICK ME TO NAVIGATE TO MAIN PAGE</a>
+    </div>
+    <script>
+        window.alert("return to the main page click on the link below");
+    </script>
+</body>
+</html>
